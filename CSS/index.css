@@ -1,0 +1,564 @@
+
+/* ===================================
+   RISHANTELY ESTACHIA - BRAND GUIDE
+=================================== */
+
+:root {
+
+    /* COLORS */
+    --pink: #FF63A3;
+    --light-pink: #FFBBD4;
+    --cta-pink: #E41090;
+
+    --black: #000000;
+    --white: #FFFFFF;
+    --background: #F5F5F5;
+
+    /* TYPOGRAPHY */
+    --font-heading: "Playfair Display", serif;
+    --font-subheading: "Instrument Serif", serif;
+    --font-body: "Inter", sans-serif;
+
+    /* SPACING */
+    --section-padding: 70px;
+    --content-width: 1200px;
+
+    /* CARDS */
+    --card-radius: 8px;
+    --card-shadow: 3px 4px 5px rgba(0,0,0,0.2);
+}
+
+
+/* ===================================
+   GENERAL STYLING
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--black);
+    font-family: var(--font-body);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-family: var(--font-heading);
+}
+
+h2 {
+    font-family: var(--font-subheading);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+}
+
+.section {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--section-padding) 5%;
+}
+
+
+/* ===================================
+   NAVIGATION
+=================================== */
+
+.hero {
+    background-color: var(--black);
+    color: var(--white);
+    overflow: hidden;
+}
+
+.nav-links {
+    max-width: var(--content-width);
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 5%;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: var(--cta-pink);
+}
+
+
+/* ===================================
+   HERO SECTION
+=================================== */
+
+.hero-layout {
+    max-width: var(--content-width);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    min-height: 440px;
+    gap: 30px;
+
+    padding: 20px 5% 0;
+}
+
+/* Left content */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 35px;
+}
+
+.hero-content h1 {
+    font-size: clamp(3.5rem, 6.3vw, 6.5rem);
+    line-height: 0.93;
+    color: var(--pink);
+    letter-spacing: -2px;
+    white-space: nowrap;
+}
+
+.hero-content h1 > span:first-child {
+    color: var(--light-pink);
+}
+
+.hero-content .star {
+    font-size: 0.45em;
+    color: var(--pink);
+    vertical-align: middle;
+    margin-left: 12px;
+}
+
+/* Profession oval */
+
+.hero-profession {
+    display: inline-block;
+    position: relative;
+
+    background-color: var(--light-pink);
+    color: var(--black);
+
+    border-radius: 50%;
+    padding: 22px 45px;
+    margin-top: 20px;
+
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.hero-profession::before {
+    content: "";
+    position: absolute;
+    left: 27px;
+    top: 25%;
+    height: 50%;
+    width: 2px;
+    background-color: var(--cta-pink);
+}
+
+.hero-profession p {
+    padding-left: 8px;
+    margin: 3px 0;
+}
+
+/* Description */
+
+.hero-description {
+    max-width: 420px;
+    margin: 25px 0;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+/* Buttons */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 9px;
+
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.95rem;
+
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--cta-pink);
+    color: var(--black);
+}
+
+.secondary-btn {
+    color: var(--white);
+    border: 1px solid var(--pink);
+}
+
+.primary-btn:hover {
+    background-color: var(--light-pink);
+    transform: translateY(-3px);
+}
+
+.secondary-btn:hover {
+    background-color: var(--pink);
+    color: var(--black);
+}
+
+/* Portrait */
+
+.hero-image {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    align-self: stretch;
+    min-height: 400px;
+}
+
+.pink-shape {
+    position: absolute;
+    bottom: 5%;
+    right: -12%;
+
+    width: 105%;
+    height: 76%;
+
+    background-color: var(--pink);
+    border-radius: 60% 40% 55% 45%;
+    transform: rotate(-18deg);
+}
+
+.hero-image img {
+    position: relative;
+    z-index: 1;
+
+    width: 83%;
+    max-height: 430px;
+
+    object-fit: contain;
+    object-position: bottom;
+}
+
+
+/* ===================================
+   ABOUT ME SECTION
+=================================== */
+
+.about-me {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-content h2 {
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    margin-bottom: 15px;
+    max-width: 680px;
+}
+
+.about-me-image {
+    justify-self: end;
+    width: 100%;
+    max-width: 310px;
+}
+
+.about-me-image img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+
+
+/* ===================================
+   PROJECTS SECTION
+=================================== */
+
+.projects-section {
+    position: relative;
+    isolation: isolate;
+}
+
+.projects-section::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 220px;
+    height: 220px;
+
+    background-color: var(--light-pink);
+    border-radius: 50%;
+
+    top: 30px;
+    left: -55px;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px;
+}
+
+/* Individual project cards */
+
+.project-card {
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    border-radius: var(--card-radius);
+
+    padding: 25px;
+    min-height: 470px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    font-family: var(--font-body);
+    font-size: clamp(1.4rem, 2vw, 1.9rem);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.project-tools {
+    margin-top: 5px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 270px;
+
+    object-fit: contain;
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+
+/* ===================================
+   SKILLS SECTION - PLACEHOLDER
+=================================== */
+
+.skills-section {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* We will style your creative and
+   technical skill cards next. */
+
+
+/* ===================================
+   FOOTER
+=================================== */
+
+.footer {
+    background-color: var(--black);
+    color: var(--white);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 30px;
+
+    padding: 45px max(5%, calc((100% - 1080px) / 2));
+}
+
+.footer-brand h2 {
+    font-family: var(--font-heading);
+    font-style: normal;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: var(--pink);
+}
+
+.footer-description h3 {
+    color: var(--light-pink);
+    font-size: 1.3rem;
+}
+
+.footer-description p {
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+
+/* ===================================
+   RESPONSIVE DESIGN
+=================================== */
+
+@media (max-width: 900px) {
+
+    .hero-layout {
+        grid-template-columns: 1fr 0.8fr;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(3rem, 7vw, 5rem);
+    }
+
+    .about-me {
+        gap: 30px;
+    }
+
+    .projects-container {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    :root {
+        --section-padding: 45px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .nav-bar {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+
+    /* Hero on mobile */
+
+    .hero-layout {
+        grid-template-columns: 1fr;
+        padding-top: 35px;
+    }
+
+    .hero-content {
+        padding-bottom: 0;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.8rem, 11vw, 5rem);
+        white-space: normal;
+    }
+
+    .hero-profession {
+        padding: 20px 35px;
+    }
+
+    .hero-image {
+        min-height: 280px;
+    }
+
+    .hero-image img {
+        max-height: 350px;
+        width: 75%;
+    }
+
+    /* About */
+
+    .about-me {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+
+    .about-me-image {
+        justify-self: center;
+        max-width: 280px;
+    }
+
+    /* Projects */
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: auto;
+    }
+
+    .project-card img {
+        height: 240px;
+        margin-top: 25px;
+    }
+
+    /* Footer */
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
